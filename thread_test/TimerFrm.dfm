@@ -1,4 +1,4 @@
-object Form1: TForm1
+object TmForm: TTmForm
   Left = 0
   Top = 0
   Caption = 'Timer Form 1'
@@ -10,6 +10,7 @@ object Form1: TForm1
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnClose = FormClose
   TextHeight = 15
   object Label1: TLabel
     Left = 167
@@ -30,6 +31,13 @@ object Form1: TForm1
     Font.Name = 'Segoe UI'
     Font.Style = [fsBold]
     ParentFont = False
+  end
+  object test_lbl: TLabel
+    Left = 96
+    Top = 46
+    Width = 15
+    Height = 15
+    Caption = '---'
   end
   object TimerBtn: TButton
     Left = 8
@@ -61,7 +69,7 @@ object Form1: TForm1
     Enabled = False
     Interval = 100
     OnTimer = Timer1Timer
-    Left = 136
-    Top = 48
+    Left = 208
+    Top = 16
   end
 end

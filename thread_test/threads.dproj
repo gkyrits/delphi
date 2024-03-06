@@ -99,7 +99,11 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="TimerFrm.pas">
-            <Form>Form1</Form>
+            <Form>TmForm</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="MngFrm.pas">
+            <Form>MngForm</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Base">
