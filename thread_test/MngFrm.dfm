@@ -3,7 +3,7 @@ object MngForm: TMngForm
   Top = 0
   BorderStyle = bsSingle
   Caption = 'Manager Form'
-  ClientHeight = 151
+  ClientHeight = 156
   ClientWidth = 270
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -13,8 +13,8 @@ object MngForm: TMngForm
   Font.Style = []
   TextHeight = 15
   object Label1: TLabel
-    Left = 26
-    Top = 100
+    Left = 92
+    Top = 42
     Width = 65
     Height = 25
     Caption = 'Forms :'
@@ -25,9 +25,35 @@ object MngForm: TMngForm
     Font.Style = [fsBold]
     ParentFont = False
   end
+  object FormCount_Lbl: TLabel
+    Left = 170
+    Top = 42
+    Width = 11
+    Height = 25
+    Caption = '0'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clRed
+    Font.Height = -19
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
   object Label2: TLabel
-    Left = 104
-    Top = 100
+    Left = 92
+    Top = 115
+    Width = 48
+    Height = 25
+    Caption = 'CPU :'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -19
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object CpuCount_Lbl: TLabel
+    Left = 170
+    Top = 115
     Width = 11
     Height = 25
     Caption = '0'
@@ -39,8 +65,8 @@ object MngForm: TMngForm
     ParentFont = False
   end
   object Add_Btn: TButton
-    Left = 16
-    Top = 24
+    Left = 4
+    Top = 12
     Width = 75
     Height = 25
     Caption = 'Add'
@@ -48,19 +74,43 @@ object MngForm: TMngForm
     OnClick = Add_BtnClick
   end
   object Remove_Btn: TButton
-    Left = 16
-    Top = 55
+    Left = 4
+    Top = 43
     Width = 75
     Height = 25
     Caption = 'Remove'
     TabOrder = 1
   end
-  object Threads_CkBx: TCheckBox
-    Left = 104
-    Top = 28
-    Width = 97
-    Height = 17
-    Caption = 'Use Threads'
+  object Mode_Bx: TComboBox
+    Left = 92
+    Top = 13
+    Width = 108
+    Height = 23
+    Style = csDropDownList
+    ItemIndex = 0
     TabOrder = 2
+    Text = 'SINGLE'
+    Items.Strings = (
+      'SINGLE'
+      'THREAD'
+      'TASK')
+  end
+  object Button1: TButton
+    Left = 8
+    Top = 88
+    Width = 75
+    Height = 25
+    Caption = 'Load CPU'
+    TabOrder = 3
+    OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 8
+    Top = 119
+    Width = 75
+    Height = 25
+    Caption = 'Free CPU'
+    TabOrder = 4
+    OnClick = Button2Click
   end
 end

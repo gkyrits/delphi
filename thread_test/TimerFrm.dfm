@@ -39,6 +39,13 @@ object TmForm: TTmForm
     Height = 15
     Caption = '---'
   end
+  object time_lbl: TLabel
+    Left = 96
+    Top = 67
+    Width = 23
+    Height = 15
+    Caption = '[---]'
+  end
   object TimerBtn: TButton
     Left = 8
     Top = 16
@@ -54,7 +61,7 @@ object TmForm: TTmForm
     Width = 65
     Height = 23
     TabOrder = 1
-    Text = '100'
+    Text = '10'
   end
   object ClearBtn: TButton
     Left = 8

@@ -11,19 +11,35 @@ type
     Add_Btn: TButton;
     Remove_Btn: TButton;
     Label1: TLabel;
+    FormCount_Lbl: TLabel;
+    Mode_Bx: TComboBox;
+    Button1: TButton;
+    Button2: TButton;
     Label2: TLabel;
-    Threads_CkBx: TCheckBox;
+    CpuCount_Lbl: TLabel;
     procedure Add_BtnClick(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
   private
     { Private declarations }
     testForms: Array of TTmForm;
-    testTreads: Array of TThread;
-    testFrm_len,testTrd_len: Integer;
+    testFrm_len: Integer;
+    cpu_cnt: Integer;
     procedure addForm;
-    procedure addThreadForm;
   public
     { Public declarations }
     procedure formClosed(id: Integer);
+  end;
+
+  TLoadThread = class(TThread)
+  public
+    class var Stop: Boolean;
+  protected
+    procedure Execute; override;
+  public
+    count:Integer;
+    cnt_str:String;
+    constructor Create;
   end;
 
 var
@@ -33,36 +49,27 @@ var
 implementation
 {$R *.dfm}
 
-type
-  TFormThrd = class(TThread)
-  private
-     form: TTmForm;
-  public
-    id: Integer;
-    procedure Execute; override;
-    procedure startForm;
-    procedure setId(pid: Integer);
-  end;
-
-//----TFormThrd------------------------
-procedure TFormThrd.Execute;
+//-----TLoadThread-----------------------
+constructor TLoadThread.Create;
 begin
-  Synchronize(startForm);
-  while not Terminated do
-    sleep(500);
+  inherited Create;
+  FreeOnTerminate:= True;
 end;
 
-procedure TFormThrd.startForm;
+procedure TLoadThread.Execute;
 begin
-  form:= TTmForm.Create(Application);
-  form.setId(id);
-  form.Show;
+  repeat
+    inc(count);
+    if count>100000 then
+      count:=0;
+    //cnt_str:=IntToStr(count);
+    {if (count mod 2)=0 then
+      cnt_str:='alfa'
+    else
+      cnt_str:='bhta';}
+  until Stop;
 end;
 
-procedure TFormThrd.setId(pid: Integer);
-begin
-  id:= pid;
-end;
 
 //-----TMngForm-----------------------
 
@@ -77,25 +84,37 @@ begin
   setLength(testForms,testFrm_len);
   testForms[testFrm_len-1]:= TTmForm.Create(Application);
   testForms[testFrm_len-1].setId(testFrm_len);
+  testForms[testFrm_len-1].setMode(Mode_Bx.ItemIndex);
   testForms[testFrm_len-1].Show;
-end;
-
-procedure TMngForm.addThreadForm;
-begin
-  inc(testTrd_len);
-  setLength(testTreads,testTrd_len);
-  testTreads[testTrd_len-1]:= TFormThrd.Create(true);
-  (testTreads[testTrd_len-1] as TFormThrd).setId(testTrd_len);
-  testTreads[testTrd_len-1].Start;
+  FormCount_Lbl.Caption:=IntToStr(testFrm_len);
 end;
 
 procedure TMngForm.Add_BtnClick(Sender: TObject);
 begin
-   if Threads_CkBx.Checked then
-      addThreadForm
-   else
       addForm;
+end;
 
+
+
+//-----------------------------
+procedure LoadCPU;
+begin
+  TLoadThread.Stop:= False;
+  TLoadThread.Create;
+end;
+
+procedure TMngForm.Button1Click(Sender: TObject);
+begin
+  LoadCPU;
+  inc(cpu_cnt);
+  CpuCount_Lbl.Caption:=IntToStr(cpu_cnt);
+end;
+
+procedure TMngForm.Button2Click(Sender: TObject);
+begin
+  TLoadThread.Stop:= True;
+  cpu_cnt:=0;
+  CpuCount_Lbl.Caption:=IntToStr(cpu_cnt);
 end;
 
 end.
