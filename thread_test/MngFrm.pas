@@ -38,7 +38,8 @@ type
     procedure Execute; override;
   public
     count:Integer;
-    cnt_str:String;
+    //cnt_str:String;
+    p_char: Array[0..20] of AnsiChar;
     constructor Create;
   end;
 
@@ -67,6 +68,10 @@ begin
       cnt_str:='alfa'
     else
       cnt_str:='bhta';}
+    if (count mod 2)=0 then
+      p_char:='alfa'
+    else
+      p_char:='bhta';
   until Stop;
 end;
 

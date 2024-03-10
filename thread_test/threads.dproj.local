@@ -3,11 +3,11 @@
 	<Transactions>
     <Transaction>2024/03/05 20:58:51.000.902,=C:\Users\gkyri\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
     <Transaction>2024/03/05 21:41:13.000.724,=C:\Users\gkyri\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2024/03/05 21:49:53.000.598,C:\Users\gkyri\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\MyFiles\WORK\delphi\thread_test\TimerFrm.dfm</Transaction>
-    <Transaction>2024/03/05 21:49:53.000.598,C:\Users\gkyri\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\MyFiles\WORK\delphi\thread_test\TimerFrm.pas</Transaction>
-    <Transaction>2024/03/05 21:50:06.000.281,C:\Users\gkyri\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\MyFiles\WORK\delphi\thread_test\threads.dproj</Transaction>
+    <Transaction>2024/03/05 21:49:53.000.598,C:\MyFiles\WORK\delphi\thread_test\TimerFrm.pas=C:\Users\gkyri\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/03/05 21:49:53.000.598,C:\MyFiles\WORK\delphi\thread_test\TimerFrm.dfm=C:\Users\gkyri\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2024/03/05 21:50:06.000.281,C:\MyFiles\WORK\delphi\thread_test\threads.dproj=C:\Users\gkyri\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
     <Transaction>2024/03/06 15:50:17.000.279,=C:\Projects\Delphy\delphi\thread_test\Unit2.pas</Transaction>
-    <Transaction>2024/03/06 15:56:53.000.936,C:\Projects\Delphy\delphi\thread_test\Unit2.dfm=C:\Projects\Delphy\delphi\thread_test\MngFrm.dfm</Transaction>
-    <Transaction>2024/03/06 15:56:53.000.936,C:\Projects\Delphy\delphi\thread_test\Unit2.pas=C:\Projects\Delphy\delphi\thread_test\MngFrm.pas</Transaction>
+    <Transaction>2024/03/06 15:56:53.000.936,C:\Projects\Delphy\delphi\thread_test\MngFrm.pas=C:\Projects\Delphy\delphi\thread_test\Unit2.pas</Transaction>
+    <Transaction>2024/03/06 15:56:53.000.936,C:\Projects\Delphy\delphi\thread_test\MngFrm.dfm=C:\Projects\Delphy\delphi\thread_test\Unit2.dfm</Transaction>
   </Transactions>
 </BorlandProject>
